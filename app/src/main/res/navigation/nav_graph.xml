@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permissionsFragment">
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="com.dev.chacha.vunasmart.presentation.fragments.PermissionsFragment"
+        android:label="permissions_fragment"
+        tools:layout="@layout/permissions_fragment" >
+        <action
+            android:id="@+id/actionPermissionsToCamera"
+            app:destination="@id/cameraFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.dev.chacha.vunasmart.presentation.fragments.CameraFragment"
+        android:label="camera_fragment"
+        tools:layout="@layout/camera_fragment" >
+        <action
+            android:id="@+id/actionCameraToPermissions"
+            app:destination="@id/permissionsFragment"
+            app:popUpTo="@id/cameraFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
